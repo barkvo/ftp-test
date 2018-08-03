@@ -1,0 +1,13 @@
+# install
+
+    npm i
+
+# run 
+
+    with proxy
+
+    SYNC_FTP_HOST=127.0.0.1 SYNC_FTP_PORT=21 SYNC_FTP_USER=user SYNC_FTP_PASS=pass SYNC_FTP_PROXY_ENABLED=true SYNC_FTP_PROXY_HOST=127.0.0.1 SYNC_FTP_PROXY_PORT=9239 SYNC_FTP_PROXY_TYPE=5 node index.js file=/temp/1.pdf
+
+    without proxy
+
+    SYNC_FTP_HOST=127.0.0.1 SYNC_FTP_PORT=21 SYNC_FTP_USER=user SYNC_FTP_PASS=pass SYNC_FTP_PROXY_ENABLED=true SYNC_FTP_PROXY_HOST=127.0.0.1 SYNC_FTP_PROXY_PORT=9239 SYNC_FTP_PROXY_TYPE=5 node index.js file=/temp/1.pdf

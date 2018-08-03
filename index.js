@@ -2,13 +2,13 @@ const lib = require('./lib'),
   path = require('path');
 
 const config = {
-  host: process.env.SYNC_FTP_HOST || 'localhost',
-  port: process.env.SYNC_FTP_PORT || 21,
-  user: process.env.SYNC_FTP_USER || 'anonymous',
-  pass: process.env.SYNC_FTP_PASS || '@anonymous',
-  proxyEnabled: process.env.SYNC_FTP_PROXY_ENABLED === 'true',
+  host: process.env.SYNC_FTP_HOST ? process.env.SYNC_FTP_HOST.trim() : 'localhost',
+  port: process.env.SYNC_FTP_PORT ? process.env.SYNC_FTP_PORT.trim() : 21,
+  user: process.env.SYNC_FTP_USER ? process.env.SYNC_FTP_USER.trim() : 'anonymous',
+  pass: process.env.SYNC_FTP_PASS ? process.env.SYNC_FTP_PASS.trim() : '@anonymous',
+  proxyEnabled: process.env.SYNC_FTP_PROXY_ENABLED && process.env.SYNC_FTP_PROXY_ENABLED.trim() === 'true',
   proxy: {
-    host: process.env.SYNC_FTP_PROXY_HOST || '192.168.1.45',
+    host: process.env.SYNC_FTP_PROXY_HOST ? process.env.SYNC_FTP_PROXY_HOST.trim() : '192.168.1.45',
     port: process.env.SYNC_FTP_PROXY_PORT ? parseInt(process.env.SYNC_FTP_PROXY_PORT, 10) : 9239,
     type: process.env.SYNC_FTP_PROXY_TYPE ? parseInt(process.env.SYNC_FTP_PROXY_TYPE, 10) : 5
   }
